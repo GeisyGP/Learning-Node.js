@@ -64,3 +64,15 @@ MySQL guarda dados em formato de tabela, em que cada coluna guarda dados diferen
 Para criar tabelas é recomendável usar um editor de código e depois colar no terminal. No arquivo _teste.sql_ tem exemplos, para criar tabelas e inserir dados.
 
 Exibir tabela `DESCRIBE <nomeTabela>;`
+
+## EJS (Embedded JavaScript templatin)
+
+O EJS serve para renderizar o HTML da aplicação.
+
+- Instalar EJS no projeto: `npm install ejs --save`
+
+Para o EJS renderizar o html, utiliza-se o método "render", por exemplo, na rota principal declara-se `res.render("index");`.
+
+O EJS possui uma tag para exibir variáveis: `<%= nome %>`. Ela pode ser misturada com tags de html. Quando é apenas uma expressão não precisa do igual: `<% if(msg){ %>` e `<% } %>`
+
+Estruturas de repetição também são usadas no EJS, a principal é o forEach, que pode ser usado para fazer listagens.
