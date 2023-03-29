@@ -31,7 +31,7 @@ console.log("Hello World");
 
 >"Ctrl" + "C" para parar o servidor.
 
-## Framework
+## Express.js
 
 Um framework é uma super biblioteca que auxilia a fazer determinada tarefa. **Express.js** é um exemplo, ele é o mais popular para criar aplicações com node.js. 
 
@@ -76,3 +76,11 @@ Para o EJS renderizar o html, utiliza-se o método "render", por exemplo, na rot
 O EJS possui uma tag para exibir variáveis: `<%= nome %>`. Ela pode ser misturada com tags de html. Quando é apenas uma expressão não precisa do igual: `<% if(msg){ %>` e `<% } %>`
 
 Estruturas de repetição também são usadas no EJS, a principal é o forEach, que pode ser usado para fazer listagens.
+
+## Bootstrap
+
+O bootstrap é um framework que ajuda a criar projeto com javascript e css, permitindo sites responsivos e com diferentes designs. 
+
+Para instalar, acessar [get.bootstrap.com/docs/5.3](https://getbootstrap.com/docs/5.3/getting-started/download/) e fazer o download da versão "Compiled CSS and JS". Nos projetos desenvolvidos foi usado a versão 4, que está disponível em [getbootstrap.com/docs/4.5](https://getbootstrap.com/docs/4.5/getting-started/download/).
+
+Os arquivos foram extraídos direto para a pasta public do projeto1. 
