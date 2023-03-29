@@ -26,3 +26,11 @@ Quando é declarado um _container_ (perguntar.ejs), ele centraliza o conteúdo n
 - btn-warning: botão amarelo
 
 A classe **card** se divide em duas parte card-header e card-body. Ela serve para fazer o conteúdo ficar dentro de um "card". 
+
+A classe **navbar** serve parar criar uma barra na página, podendo mudar a sua cor: navbar-light (deixa as letras brancas) e bg-primary (deixa o fundo azul). Ainda pode usar navbar-brand para alinhar a esquerda.
+
+Em CSS, vh corresponde a altura da tela e significa uma porcentagem dela, como exemplo: 5vh = altura de 5%.
+
+> Um  `href="/"` faz com que volte para a tela inicial, a tela "/".
+
+Para fazer com que a navbar fique presente em todas as páginas existe um recurso do EJS, chamado partials. Esse recurso possibilita reutilizar partes de layout. Então foi separado em três arquivos: header, footer e navbar. Quando for utilizado em uma página é só adicionar como: `<%- include ("partials/header.ejs") %>`
