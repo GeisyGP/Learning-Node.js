@@ -34,3 +34,20 @@ Em CSS, vh corresponde a altura da tela e significa uma porcentagem dela, como e
 > Um  `href="/"` faz com que volte para a tela inicial, a tela "/".
 
 Para fazer com que a navbar fique presente em todas as páginas existe um recurso do EJS, chamado partials. Esse recurso possibilita reutilizar partes de layout. Então foi separado em três arquivos: header, footer e navbar. Quando for utilizado em uma página é só adicionar como: `<%- include ("partials/header.ejs") %>`
+
+## Salvar Dados
+
+O método GET recebe os valores pela URL, já o método POST mantém escondido. Para receber valores do formulário utilizamos o método post.
+
+Para traduzir os dados que são enviado no formulário em javascript existe o **body-parser**: `npm install body-parser --save`d
+
+O MySQL Workbench é uma ferramenta que facilita o uso de mysql, sem precisar da linha de comando. Ele pode ser baixado em [dev.mysql.com](https://dev.mysql.com/downloads/workbench/)
+
+O Sequelize possibilita manipular o banco de dados com códigos javascript. Para instalar: `npm install --save sequelize`. Além disso, é necessário instalar uma biblioteca extra: `npm install --save mysql2`
+
+### Como conectar o Sequelize com o MySQL?
+
+Criando uma nova pasta, para organizar todos os arquivos de banco de dados e em um arquivo criar uma conexão, como no arquivo `database.js`.
+
+> Por convenção arquivos de model iniciam com letra maiúscula.
+
