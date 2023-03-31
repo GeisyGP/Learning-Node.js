@@ -45,9 +45,20 @@ O MySQL Workbench é uma ferramenta que facilita o uso de mysql, sem precisar da
 
 O Sequelize possibilita manipular o banco de dados com códigos javascript. Para instalar: `npm install --save sequelize`. Além disso, é necessário instalar uma biblioteca extra: `npm install --save mysql2`
 
+---
 ### Como conectar o Sequelize com o MySQL?
 
 Criando uma nova pasta, para organizar todos os arquivos de banco de dados e em um arquivo criar uma conexão, como no arquivo `database.js`.
+---
 
-> Por convenção arquivos de model iniciam com letra maiúscula.
+Para criar uma tabela no banco de dados usamos model. Por convenção arquivos de model iniciam com letra maiúscula, como `Pergunta.js`
 
+> tipo STRING é pra textos curtos e tipe TEXT para textos longos
+
+No MySQL Workbench, para apagar tabela: clicar com botão direito e "drop table". Se algo não estiver aparecendo "Refresh all".
+
+Para salvar dados acrescentar no código `Pergunta.create()` que é equivalente a `'' INSERT INTO perguntas ...Pergunta` em SQL.
+
+Para buscar dados da tabela `Pergunta.findAll()` que é equivalente a `SELECT * FROM pergunta` em SQL. 
+
+Para ordenar dados de uma tabela, da mais recente pra mais antiga, pode ser usado o ID, que fica em ordem crescente. Para isso, usa-se um array `order: ["id", "DESC"]`, em que desc é para decrescente e asc para crescente.
