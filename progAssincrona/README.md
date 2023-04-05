@@ -81,4 +81,35 @@ Em promises só é possível passar um parâmetro, se for necessário mais de um
         reject("Fila cheia");
 ```
 
-Uma promise pode ser chamada dentro de outra, promises aninhadas. Isso acaba deixando o código bagunçado, é algo a ser evitado. 
+> Para pegar os dados de uma promise é preciso usar o "then". 
+
+Uma promise pode ser chamada dentro de outra, promises aninhadas. Isso acaba deixando o código bagunçado, é algo a ser evitado (promise hell). Outra forma de fazer isso, eliminando o problema é o async/await.
+
+## Async/Await
+
+Await é o mesmo que dizer para o código esperar a promise ser concluída para retornar o resultado. 
+```
+async function principal(){
+    let usuarios = await pegarUsuario();
+}
+```
+Esse código acima corresponde a:
+```
+pegarUsuario().then(usuario =>{
+
+});
+```  
+
+É uma forma de escrever código assíncrono com estilo síncrono, mas ele também bloqueia. 
+
+Com async/await não se tem o catch para tratar erros, mas podemos usar o try catch:
+```
+try{
+    //tenta fazer algo
+    //se der certo faz isso
+} catch (erro){
+    //se der erro isso
+}
+```
+
+Dessa forma, catch se liga direto ao reject da promise.

@@ -17,7 +17,7 @@ function buscarEmailNoBanco(id){
 function enviarEmail(corpo, para){
     return new Promise((resolve, reject) => {
         setTimeout(() => {
-            let deuErro = false;
+            let deuErro = true;
 
             if(!deuErro)
                 resolve({ time: 4, to: "fulano@gmail.com" });
@@ -27,12 +27,15 @@ function enviarEmail(corpo, para){
     });
 }
 
-pegarId().then((id) => {
-    buscarEmailNoBanco(id).then((email) => {
-        enviarEmail("Oi, seja bem vindo!", email).then(() =>{
-            console.log("Email enviando para o usuário com id: "+ id);
-        }).catch((err) => {
-            console.log(err);
-        });
-    });
-})
+async function principal(){
+    let id = await pegarId();
+    let email = await buscarEmailNoBanco(id);
+    try{
+        await enviarEmail("Oi, seja bem vindo!", email);
+        console.log("Email enviado com sucesso!");
+    } catch(err){
+        console.log(err);
+    }
+}
+
+principal();
