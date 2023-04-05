@@ -1,21 +1,38 @@
-function enviarEmail(corpo, para, callback){
-    setTimeout(() => {
-        //....lógica
-        
-        let deuErro = true;
-
-        if(deuErro)
-            callback("O envio do email falhou!");
-        else 
-            callback();
-    }, 5000);
+function pegarId(){
+    return new Promise((resolve, reject) =>{
+        setTimeout(() =>{
+            resolve(5);
+        }, 3000);
+    });
 }
 
+function buscarEmailNoBanco(id){
+    return new Promise((resolve, reject) =>{
+        setTimeout(() =>{
+            resolve("fulano@gmail.com");
+        },2000);
+    });
+}
 
-console.log("Enviando email...");
-enviarEmail("Oi, seja bem vindo!", "fulano@gmail.com", (erro) => {
-    if(erro === undefined)
-        console.log("O seu email foi enviado");
-    else
-        console.log("Ocorreu um erro: "+ erro);
-}); 
+function enviarEmail(corpo, para){
+    return new Promise((resolve, reject) => {
+        setTimeout(() => {
+            let deuErro = false;
+
+            if(!deuErro)
+                resolve({ time: 4, to: "fulano@gmail.com" });
+            else
+                reject("Fila cheia");
+        }, 4000);
+    });
+}
+
+pegarId().then((id) => {
+    buscarEmailNoBanco(id).then((email) => {
+        enviarEmail("Oi, seja bem vindo!", email).then(() =>{
+            console.log("Email enviando para o usuário com id: "+ id);
+        }).catch((err) => {
+            console.log(err);
+        });
+    });
+})

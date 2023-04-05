@@ -51,3 +51,34 @@ enviarEmail("Oi, seja bem vindo!", "fulano@gmail.com", () => {
 ```
 
 Callbacks também podem receber parâmetros que podem ser usados da mesma forma que usamos em outras funções.
+
+## Promises 
+
+Promises são uma evolução dos callbacks, são promessas em linguagem de programação. Elas podem ser cumpridas ou criar uma falha. As promises precisam de dois parâmetros, um para avisar quando ela funcionar e outro para quando não:
+
+```
+function func1(a, b){
+    return new Promise((resolve, reject) => {
+        setTimeout(() => {
+            let deuErro = false;
+            if(!deuErro)
+                resolve();
+            else
+                reject();
+        }, 4000);
+    });
+}
+```
+
+Sempre que uma promise for rejeitada, é necessário tratá-la. Se usar o `.then` para o caso dela funcionar, pode ser usado o `.catch` logo após, para o caso de falhar.
+
+Em promises só é possível passar um parâmetro, se for necessário mais de um pode ser um objeto. 
+```
+    let deuErro = false;
+    if(!deuErro)
+        resolve({ time: 4, to: "fulano@gmail.com" });
+    else
+        reject("Fila cheia");
+```
+
+Uma promise pode ser chamada dentro de outra, promises aninhadas. Isso acaba deixando o código bagunçado, é algo a ser evitado. 
