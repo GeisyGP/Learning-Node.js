@@ -73,3 +73,34 @@ console.log("Título: " + this.titulo);
 This esta dizendo "deste objeto". Pode ser usado também para usar um método dentro de outro: `this.Reproduzir();`. 
 
 Quando criamos uma nova instância, estamos criando uma cópia de toda a classe, então _this_ é como se nas cópias substituísse o nome dado a classe. This representa o objeto.
+
+## Métodos Estáticos
+
+Para acessar métodos de uma classe, sem ter que criar um objeto, adicionar _static_ a ele:
+```
+class Calculadora{
+    static Somar (a, b){
+        console.log(a + b);
+    }
+    static Sub(a, b){
+        console.log(a - b);
+    }
+}
+```
+Assim, pode acessar eles com `Calculadora.Somar(2, 3);`
+
+## Composição
+
+Composição é reaproveitar código. Basicamente é construir uma classe com outras classes. 
+
+Quando se tem muitas classes pequenas, são chamadas de componentes. Duas ou mais classes diferentes podem usar os mesmos componentes. O uso de composição facilita na hora de realizar alterações em códigos que são usados em mais de uma classe. No arquivo _ManipuladorDeArquivos.js_ tem um exemplo de uso de composição.
+
+## Herança
+
+O intuito principal é reutilizar código, assim como composição, mas de uma maneira mais "fraca".
+
+Situação exemplo: quando instanciar, o objeto precisa de mais atribuições do que a classe tem. Então é usado _extends_: `class Computador extends Produtos{}`. Em que Produtos é a classe mãe e Computador o filho. 
+
+Para reaproveitar atributos e lógicas de métodos, pode ser usado _super_ como: `super(nome, idade, preco);`
+
+>Não é recomendado criar classes "avós", em que classe filho herda de outra classe filho
