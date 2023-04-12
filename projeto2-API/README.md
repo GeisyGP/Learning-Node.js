@@ -48,3 +48,10 @@ Para cadastrar dados usa-se o método post. No postman, usando o post, temos que
 ```
 
 > Se der erro ao usar nodemon index.js, acrescentar "npx" no inicio.
+
+
+## Consumo de API 
+
+**Cors** é um mecanismo de segurança em http que bloqueia requisições externas. Para resolver isso, instalar na API: `npm install cors --save`.
+
+No arquivo _index.html_, em consumoAPI, criamos o frontend (criar, deletar e editar) usando a API de games. Para isso, usamos o axios.
