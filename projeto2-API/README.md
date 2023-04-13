@@ -55,3 +55,13 @@ Para cadastrar dados usa-se o método post. No postman, usando o post, temos que
 **Cors** é um mecanismo de segurança em http que bloqueia requisições externas. Para resolver isso, instalar na API: `npm install cors --save`.
 
 No arquivo _index.html_, em consumoAPI, criamos o frontend (criar, deletar e editar) usando a API de games. Para isso, usamos o axios.
+
+## Autenticação de API
+
+Usando o JWT a autenticação acontece com o usuário informando o email e senha, se existe no banco de dados, ele recebe um token que deve ser enviado junto com suas requisições. Esse token é implementado com a biblioteca "JSON Web Token" (`npm install --save jsonwebtoken`).  
+
+No token pode carregar respectivamente informações essenciais, a chave secreta e por quanto tempo o token é válido: `jwt.sign({id: user.id, email: user.email},JWTSecret,{expiresIn:"48h"});`
+
+Depois de criá-lo, para proteger as rotas pode-se usar o Middleware. Ele fica entre o usuário e a rota, sendo chamado toda vez que o usuário envia uma requisição para a rota e quando a rota devolve uma resposta. A estrutura básica dele é: `function auth(req, res, next){}`
+
+No Postman, o token gerado deve ser copiado e colado na aba "Authorization", mudando o tipo para "Bearer Token".
