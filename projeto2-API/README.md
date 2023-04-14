@@ -65,3 +65,5 @@ No token pode carregar respectivamente informações essenciais, a chave secreta
 Depois de criá-lo, para proteger as rotas pode-se usar o Middleware. Ele fica entre o usuário e a rota, sendo chamado toda vez que o usuário envia uma requisição para a rota e quando a rota devolve uma resposta. A estrutura básica dele é: `function auth(req, res, next){}`
 
 No Postman, o token gerado deve ser copiado e colado na aba "Authorization", mudando o tipo para "Bearer Token".
+
+Na página HTML, para salvar o token usamos **localstorage**, assim o token pode ser utilizado em qualquer outra requisição. Ele permite salvar dados localmente no navegador do usuário, dados pequenos como tokens de validação, configurações e preferências.
