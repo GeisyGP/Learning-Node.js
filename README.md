@@ -84,3 +84,48 @@ O bootstrap é um framework que ajuda a criar projeto com javascript e css, perm
 Para instalar, acessar [get.bootstrap.com/docs/5.3](https://getbootstrap.com/docs/5.3/getting-started/download/) e fazer o download da versão "Compiled CSS and JS". Nos projetos desenvolvidos foi usado a versão 4, que está disponível em [getbootstrap.com/docs/4.5](https://getbootstrap.com/docs/4.5/getting-started/download/).
 
 Os arquivos foram extraídos direto para a pasta public do projeto1. 
+
+## MongoDB
+
+O Mongo é um banco de dados não relacional que pode armazenar grandes quantidades de dados não estruturados. O problema dele é a falta de disponibilidade, que requer maior hardware.
+
+Ele pode ser intalado em [www.mongodb.com/try/download/community](https://www.mongodb.com/try/download/community). Depois de instalado, adicionar à vairiável do sistema "path" para poder ser acessado pelo cmd.   
+  
+### Principais comandos 
+
+- Inicializar um model: `const Article = mongoose.model("Article", articleModel`     
+- Criar dados: `const artigo = new Article({ /*...campos*/ });`
+- Salvar dados:
+```
+  artigo.save().then(() => {
+    console.log("Artigo salvo!");
+  }).catch(err => {
+    console.log(err);
+  })*/
+```
+- Listar todos os dados:
+```
+Article.find({}).then(articles => {
+    console.log(articles);
+  }).catch(err => {
+    console.log(err);
+  })
+```
+  -   Se quiser apenas dados com um campo específico, informar entre as chaves, ex: `"author":"Maria"`
+  -   Se quiser apenas o primeiro, substituir find por `findOne`;
+- Deletar dados pelo Id:
+```
+Article.findByIdAndDelete("643d3c79bfc5f5b00ded4350").then(() => {
+    console.log("Dado removido!");   
+  }).catch(err => {
+    console.log(err);
+  })
+``` 
+- Atualizar dados pelo Id:
+```
+Article.findByIdAndUpdate("643d3f7aa366075aae0298f5",{ /*...campos*/ }).then(() => {
+    console.log("Update!")
+}).catch(err => {
+    console.log(err);
+})
+```
