@@ -38,7 +38,36 @@ class AppointmentService{
             });
             return appointments;
         }
-   }
+    }
+    async GetById(id){
+        try{
+            let event = await Appo.findOne({"_id": id});
+            return event;
+        }catch(err){
+            console.log(err);
+        }
+
+
+    }
+    async Finished(id){
+        try{
+            await Appo.findByIdAndUpdate(id, {finished: true});
+            return true;
+        }catch(err){
+            console.log(err);
+            return false;
+        }
+    }
+    async Search(query){    
+        try{
+            let appos = await Appo.find().or([{email: query}, {cpf: query}]);
+            return appos;
+        }catch(err){
+            console.log(err);
+            return [];
+        }
+    }
+
 }
 
 module.exports = new AppointmentService();
