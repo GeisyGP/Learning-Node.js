@@ -36,37 +36,37 @@ app.post("/create", async (req, res) => {
 });
 
 app.get("/getcalendar", async (req, res) => {
-    let appointments = await AppointmentService.GetAll(false);
+    let appointments = await appointmentService.GetAll(false);
     res.json(appointments);
 });
 
 app.get("/event/:id", async (req, res) => {
-    let appointment = await AppointmentService.GetById(req.params.id);
+    let appointment = await appointmentService.GetById(req.params.id);
     res.render("event",{appo: appointment});
 });
 
 
 app.post("/finish", async (req, res) => {
     let id = req.body.id;
-    let result = await AppointmentService.Finished(id);
+    let result = await appointmentService.Finished(id);
     res.redirect("/");
 });
 
 app.get("/list", async (req, res) => {
-    let appos = await AppointmentService.GetAll(true);
+    let appos = await appointmentService.GetAll(true);
     res.render("list", {appos});
 });
 
 
 app.get("/searchresult", async (req, res) => {
-    let appos = await AppointmentService.Search(req.query.search);
+    let appos = await appointmentService.Search(req.query.search);
     res.render("list", {appos});
 });
 
 let pollTime = 1000 * 60 * 5; //5 minutos
 
 setInterval(async () => {
-    await AppointmentService.SendNotification();
+    await appointmentService.SendNotification();
 },pollTime)
 
 app.listen(8080, () => {});
