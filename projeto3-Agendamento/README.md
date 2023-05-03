@@ -5,7 +5,7 @@ Esse projeto é um sistema de agendamento de consultas com frontend simples.
 ## Biblioteca FullCalender
 
 Assim como diversas outras aplicações que possuem sistema de agendamento, é usado o FullCalender.
-Em (fullcalendar.io)[https://fullcalendar.io/docs/initialize-globals] é baixado o arquivo zip, que contém o css e o script. Esses arquivos foram importados na pasta public.
+Em [fullcalendar.io](https://fullcalendar.io/docs/initialize-globals) é baixado o arquivo zip, que contém o css e o script. Esses arquivos foram importados na pasta public.
 
 O calendário aparece na página principal, na rota "/", nele aparecem os eventos ainda não finalizados. Para acessar todos os eventos, incluindo os finalizados, existe a rota "/list". Nela também tem uma barra de pessquisa para buscar as consultas pelo cpf ou email.
 

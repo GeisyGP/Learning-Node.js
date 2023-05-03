@@ -12,7 +12,8 @@ Será desenvolvido um projeto de API de games.
 |PUT|Atualizar completamente dados|forms|sim|não|
 |PATCH|Atualizar parcialmente|forms|sim|não|
 |DELETE|Apagar dados|forms/link|sim|não|
-(Formação Node.js - Udemy)
+
+>(Formação Node.js - Udemy)
 
 **API** é uma interface de comunicação entre duas ou mais coisas. Exemplo: se comunicar com a API do YouTube para buscar videos. 
 

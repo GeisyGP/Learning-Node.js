@@ -49,7 +49,6 @@ O Sequelize possibilita manipular o banco de dados com códigos javascript. Para
 ### Como conectar o Sequelize com o MySQL?
 
 Criando uma nova pasta, para organizar todos os arquivos de banco de dados e em um arquivo criar uma conexão, como no arquivo `database.js`.
----
 
 Para criar uma tabela no banco de dados usamos model. Por convenção arquivos de model iniciam com letra maiúscula, como `Pergunta.js`
 
@@ -62,5 +61,5 @@ Para salvar dados acrescentar no código `Pergunta.create()` que é equivalente 
 Para buscar dados da tabela `Pergunta.findAll()` que é equivalente a `SELECT * FROM pergunta` em SQL. 
 
 Para ordenar dados de uma tabela, da mais recente pra mais antiga, pode ser usado o ID, que fica em ordem crescente. Para isso, usa-se um array `order: ["id", "DESC"]`, em que desc é para decrescente e asc para crescente.
----
-Nessa aplicação criamos e lemos dados no banco de dados.
+
+_Nesta aplicação criamos e lemos dados no banco de dados._
